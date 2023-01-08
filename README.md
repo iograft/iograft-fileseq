@@ -1,4 +1,4 @@
-# iograft Types and Nodes for fileseq by justinfx
+# iograft Types and Nodes for fileseq
 
 This repository contains types and nodes for interacting with file sequences using the `fileseq` library from justinfx: [https://github.com/justinfx/fileseq](https://github.com/justinfx/fileseq).
 
