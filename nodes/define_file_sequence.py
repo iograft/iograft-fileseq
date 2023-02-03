@@ -7,9 +7,9 @@ import iobasictypes
 import iosequencetypes
 
 
-class CreateFileSequence(iograft.Node):
+class DefineFileSequence(iograft.Node):
     """
-    Create a new file sequence.
+    Define a new file sequence.
     """
     file_pattern = iograft.InputDefinition("file_pattern",
                                            iobasictypes.Path())
@@ -21,7 +21,7 @@ class CreateFileSequence(iograft.Node):
 
     @classmethod
     def GetDefinition(cls):
-        node = iograft.NodeDefinition("create_file_sequence", "file_seq")
+        node = iograft.NodeDefinition("define_file_sequence", "file_seq")
         node.SetMenuPath("File Sequence")
         node.AddInput(cls.file_pattern)
         node.AddInput(cls.frame_set)
@@ -30,7 +30,7 @@ class CreateFileSequence(iograft.Node):
 
     @staticmethod
     def Create():
-        return CreateFileSequence()
+        return DefineFileSequence()
 
     def Process(self, data):
         file_pattern = iograft.GetInput(self.file_pattern, data)
@@ -44,5 +44,5 @@ class CreateFileSequence(iograft.Node):
 
 
 def LoadPlugin(plugin):
-    node = CreateFileSequence.GetDefinition()
-    plugin.RegisterNode(node, CreateFileSequence.Create)
+    node = DefineFileSequence.GetDefinition()
+    plugin.RegisterNode(node, DefineFileSequence.Create)
